@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken"); // Import JWT
 const db = require("../database");
+const dayjs = require('dayjs');//convert date to correct format
 //handle if student
 function loginUser(req, res) {
   const email = req.body.email;
@@ -22,7 +23,7 @@ function loginUser(req, res) {
       const email = result[0].email;
       const school = result[0].school;
       const profile = result[0].profile_pic;
-      const dob = result[0].date_of_birth;
+      const dob = dayjs(result[0].date_of_birth).format(' DD MMMM YYYY');
       const course = result[0].course;
       const contact = result[0].contact_number
       const isTeacher = result[0].isTeacher;
@@ -64,7 +65,7 @@ function loginTeacher(req, res) {
       const email = result[0].email;
       const school = result[0].school;
       const profile = result[0].profile_pic;
-      const dob = result[0].date_of_birth;
+      const dob = dayjs(result[0].date_of_birth).format(' DD MMMM YYYY');
       const contact = result[0].contact_number
       const isTeacher = result[0].isTeacher;
 
