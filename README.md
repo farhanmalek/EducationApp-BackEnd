@@ -28,5 +28,9 @@ This app is an interactive learning platform designed to introduce kids to codin
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/codekid-learning-platform.git
-   cd codekid-learning-platform
+   git clone https://github.com/farhanmalek/EducationApp-BackEnd
+   cd EducationApp-BackEnd
+   npm i
+   npm run dev
+
+This will start the backend server, this is to be done in conjunction with the front end server.
